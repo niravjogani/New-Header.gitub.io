@@ -1,0 +1,214 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+body {
+    background: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+}
+p {
+	margin-bottom: 1.5em;
+}
+embed, iframe, object {
+	max-width: 100%;
+}
+ul li, ol li {
+	list-style-type: none;
+}
+body, ul, ol, ul li, ol li {
+	padding: 0px;
+	margin: 0px;
+}
+a, a:hover, a:focus, a:active {
+	outline: none !important;
+	text-decoration: none;
+}
+img {
+	height: auto;
+	max-width: 100%;
+    display: block;
+}
+a {
+	color: #000000;
+    display: inline-block;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    font-style: normal;
+	margin-bottom: 0.5rem;
+}
+.container{
+    padding: 0px 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1325px;
+}
+
+
+
+.back-to-top {
+    background-color: #241F1B;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+}
+.back-to-top:hover {
+    background-color: #61B2AC;
+}
+.back-to-top svg.icon__arrow-up {
+    fill: white;
+    width: 30px;
+    height: 30px;
+}
+/*header*/
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+}
+header.fixed-top {
+    z-index: 11;
+    -webkit-animation: slide-in 400ms ease-out;
+    animation: slide-in 400ms ease-out;
+    padding: 20px 0;
+}
+.header {
+    background-color: #fff;
+    padding: 33px 0;
+}
+.brand, .wrapper-main, #menu {
+    display: flex;
+    align-items: center;
+}
+.brand h2{
+    font-size: 35px;
+    line-height: 48px;
+    font-weight: 800;
+    margin: 0 0 0 16px;
+}
+.wrapper-main {
+    justify-content: space-between; 
+}
+.wrapper-main{
+    width: 100%;
+}
+#menu {
+    gap: 100px;
+    justify-content: end;
+}
+.menu-link {
+    transition: all 0.3s ease-in-out;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19.12px;
+    display: inline-block;
+    position: relative;
+    color: #241F1B;
+}
+.menu-link:hover, .frontsearch-select ul li a:hover, .address-text a:hover, .copy-right a:hover, .footre-list:hover {
+    color: #61B2AC;
+}
+.close-btn{
+    display: none;
+}
+.close-btn {
+    text-align: end;
+    margin: 15px;
+}
+ .burger {
+     display: none;
+     cursor: pointer;
+     position: relative;
+     width: 1.75rem;
+     height: 1rem;
+     opacity: 0;
+     visibility: hidden;
+ }
+ .burger-line {
+     position: absolute;
+     left: 0;
+     width: 100%;
+     height: 2px;
+     opacity: 1;
+     background: #060709;
+ }
+ .burger-line:nth-child(1) {
+     top: 0px;
+ }
+ .burger-line:nth-child(2) {
+     top: 0.5rem;
+ }
+ .burger-line:nth-child(3) {
+     top: 1rem;
+ }
+ .overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     z-index: 9;
+     opacity: 0;
+     visibility: hidden;
+     transition: all 0.35s ease-in-out;
+     background-color: rgba(0, 0, 0, 0.65);
+}
+@media (max-width: 991px) {
+    /* header */
+    .header {
+        padding: 20px 0;
+    }    
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        z-index: 10;
+        opacity: 0;
+        overflow-y: auto;
+        visibility: hidden;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        background-color: #fafafa;
+        transition: all 0.5s ease;
+    }
+    .navbar.active {
+        left: 0;
+    }
+    .menu {
+        height: auto;
+        padding: 15px 0px 30px 20px;
+        flex-direction: column;
+        gap: 25px !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    .menu-link {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    .burger {
+        margin-left: auto;
+    }
+    .burger, .overlay.active, .navbar.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .overlay.active, .close-btn, .burger, .menu-link {
+       display: block;
+    }
+  /* header end */
+}
